@@ -1,14 +1,12 @@
 const carousel = document.querySelector('.carousel')
-const grid = document.querySelector('.grid')
-// const firstImage = carousel.querySelectorAll('img')[0]
+const firstItem = carousel.querySelectorAll('.carousel-item')[0]
 const arrowIcons = document.querySelectorAll('.wrapper i')
-console.log(grid.clientWidth)
 
-// let firstImageWidth = firstImage.clientWidth + 18
+const firstItemWitdth = firstItem.clientWidth
 
 arrowIcons.forEach(icon => {
     icon.addEventListener('click', () => {
         // console.log(icon)
-        grid.scrollLeft += icon.id == 'left' ? -grid.clientWidth : grid.clientWidth
+        carousel.scrollLeft += icon.id == 'left' ? -firstItemWitdth : firstItemWitdth
     })
 })
